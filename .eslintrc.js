@@ -1,18 +1,22 @@
 module.exports = {
     root: true,
     parser: '@typescript-eslint/parser',
-    plugins: [
-      '@typescript-eslint',
-    ],
+    parserOptions: {
+        ecmaFeatures: {
+            jsx: true,
+            modules: true,
+        },
+    },
+    plugins: ['@typescript-eslint', 'prettier'],
     extends: [
-      'eslint:recommended',
-      'plugin:@typescript-eslint/recommended',
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+        'prettier',
     ],
-    'ecmaFeatures': {
-        'jsx': true,
-        'modules': true
+    env: {
+        node: true,
     },
-    'env': {
-        'node': true
+    rules: {
+        semi: 'error',
     },
-  };
+};
