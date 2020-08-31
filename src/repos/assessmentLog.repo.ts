@@ -19,7 +19,7 @@ const log1: AssessmentLog[] = [
     },
     {
         id: 8,
-        is_complete: true,
+        is_complete: false,
         start_time: '2020-07-24T16:49:59.000Z',
         total_time: '267049636',
         total_correct: 2,

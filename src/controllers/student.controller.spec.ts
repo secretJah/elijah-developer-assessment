@@ -2,7 +2,7 @@ import { studentController } from './student.controller';
 
 import * as supertest from 'supertest';
 
-let request: any;
+let request: supertest.SuperTest<supertest.Test>;
 
 beforeEach(() => {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -21,7 +21,6 @@ test('should return false given external link', () => {
 it('gets the test endpoint', async (done) => {
     const response = await request.get('/student/display/1');
     expect(response.status).toBe(200);
-    console.log(response.body);
-    expect(response.body).toBe({});
+    expect(response.body).toEqual({});
     done();
 });
